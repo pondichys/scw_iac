@@ -22,7 +22,7 @@
     
     - name: Install powerline-go 1.17
       get_url:
-        dest: "{{ lookup('env','HOME') }}/bin"
+        dest: "{{ lookup('env','HOME') }}/bin/powerline-go"
         url: "https://github.com/justjanne/powerline-go/releases/download/v1.17.0/powerline-go-linux-amd64"
         mode: 0755
 
