@@ -8,8 +8,8 @@ The software in the list hereunder are deployed with ansible playbooks / roles.
 
 ### Base stuff
 
-[powerline](/): a super nice shell command line for bash.
-[netdata](https://www.netdata.cloud/): monitoring tool.
+- [powerline-go](https://github.com/justjanne/powerline-go): a super nice shell command line for bash.
+- [netdata](https://www.netdata.cloud/): monitoring tool.
 
 ### Development stuff for work
 
@@ -17,14 +17,15 @@ The software in the list hereunder are deployed with ansible playbooks / roles.
 
 > Idea: investigate the option to deploy the seblab stuff on a [Kapsule](https://www.scaleway.com/fr/kubernetes-kapsule/) worker node instead.
 
-Docker : to rule them all.
-Traefik v2.0: reverse proxy for all docker installed applications.
-[Authelia](https://docs.authelia.com/): authentication and single sign-on for web apps.
-[Hugo](https://gohugo.io/): a static site generator for my blog.
-[Miniflux](https://miniflux.app/index.html): a RSS aggregator - to be investigated as it requires PostGresql database.
+- Docker : to rule them all.
+- Traefik v2.0: reverse proxy for all docker installed applications.
+- [Authelia](https://docs.authelia.com/): authentication and single sign-on for web apps.
+- [Hugo](https://gohugo.io/): a static site generator for my blog.
+- [Miniflux](https://miniflux.app/index.html): a RSS aggregator - to be investigated as it requires PostGresql database.
 
 To investigate
-[Ouroboros](https://github.com/pyouroboros/ouroboros): a software to monitor and deploy new versions of Docker containers.
+
+- [Ouroboros](https://github.com/pyouroboros/ouroboros): a software to monitor and deploy new versions of Docker containers.
 
 ## Inventory
 
