@@ -1,5 +1,5 @@
 ---
-- host: localhost
+- hosts: localhost
 
   tasks:
 
