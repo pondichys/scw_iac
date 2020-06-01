@@ -1,0 +1,48 @@
+---
+- host: localhost
+
+  tasks:
+
+    - name: Upgrade all packages to the latest version
+      become: true
+      apt:
+        name: "*"
+        state: latest
+
+    - name: Install some basic tools
+      become: true
+      apt:
+          name: [sudo,git,wget,htop]
+          state: present
+
+    - name: Create $HOME/bin
+      file:
+        path: "{{ lookup('env','HOME') }}/bin"
+        state: directory
+    
+    - name: Install powerline-go 1.17
+      get_url:
+        dest: "{{ lookup('env','HOME') }}/bin"
+        url: "https://github.com/justjanne/powerline-go/releases/download/v1.17.0/powerline-go-linux-amd64"
+        mode: 0755
+
+    - name: Configure powerline-go in shell
+      blockinfile:
+        path: "{{ lookup('env','HOME') }}/.bashrc"
+        backup: yes 
+        marker: "# {mark} Powerline configuration"
+        state: present
+        block: | 
+          function _update_ps1() {
+          PS1="$($HOME/bin/powerline-go -max-width=40 -cwd-mode=compatible -modules=root,ssh,perms,cwd,git,jobs,exit -error $?)"
+          }
+          if [ "$TERM" != "linux" ] && [ -f "$HOME/bin/powerline-go" ]; then
+            PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+          fi
+
+#    - name: Install netdata for monitoring
+#      become: true
+#      apt:
+#        name: netdata
+#        state: present
+...

@@ -1,0 +1,33 @@
+---
+- host: localhost
+
+  tasks:
+  
+  - name: Install python 3.8, venv
+    become: yes
+    apt:
+      name: [python3.8,python3.8-venv]
+      state: present
+
+  - name: install virtualenvwrapper
+    become: yes
+    apt:
+      name: virtualenvwrapper
+      state: present
+
+  - name: Install Azure CLI repo
+    become: yes
+    apt_repository:
+      repo: 'deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli bionic main'
+      filename: azure-cli
+      state: present
+
+  - name: Install Azure CLI 
+    become: yes
+    apt:
+      name: azure-cli
+      state: present
+      update_cache: yes
+
+
+
