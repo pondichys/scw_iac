@@ -9,7 +9,7 @@ resource "scaleway_instance_security_group" "def-sg" {
   inbound_rule { # Accept only SSH trafic from my IP
     action = "accept"
     port   = 22
-    ip     = "109.89.121.60"
+    ip     = "109.88.57.95"
   }
 
   inbound_rule {

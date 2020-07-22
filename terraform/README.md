@@ -24,7 +24,7 @@ terraform {
 }
 ```
 
-Next create a backend.tfvars file containing the properties of the remote backend. Use the instructions on [terraform scaleway provider's page](https://www.terraform.io/docs/providers/scaleway/index.html).
+Next create a `backend.tfvars` file containing the properties of the remote backend. Use the instructions on [terraform scaleway provider's page](https://www.terraform.io/docs/providers/scaleway/index.html).
 
 ```hcl
 # Configuration file for the state file backend
@@ -47,11 +47,11 @@ terraform init -backend-config="access_key=ScalewayAccessKey" -backend-config="s
 
 Another option is to populate environment variables `SCW_ACCESS_KEY` and `SCW_SECRET_KEY`.
 
-> Note: `scaleway-cli` tool (or `scw`) can be installed with chocolatey to offer other functionalities. To install it, run `choco install scaleway-cli` in a powershell console started with administrative rights.
+> Note: `scaleway-cli` tool (or `scw`) can be installed with `chocolatey` on Windows 10 to offer other functionalities. To install it, run `choco install scaleway-cli` in a powershell console started with administrative rights.
 
 ## Import the current BLOB bucket for Synology backup
 
-Create an empty resource in main.tf
+Create an empty resource in `main.tf`
 
 ```hcl
 resource "scaleway_object_bucket" "tf-sebpon-nas-backup" {
