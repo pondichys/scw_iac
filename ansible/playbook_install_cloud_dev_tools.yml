@@ -33,7 +33,6 @@
     apt:
       name: azure-cli
       state: present
-      update_cache: yes
 
 
 
