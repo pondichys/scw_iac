@@ -1,18 +1,20 @@
 # Terraform deployment code
 
-## Create a bucket for terraform state file.
+This page explains the `Terraform` setup of my IaC on Scaleway cloud.
 
-This should be the only resource created manually. Terraform can store its state file either locally or at a remote location. Working with a local state file is ok for personnal use on a single computer but if you plan to work alone but on multiple computers or if you plan to work with multiple people on the same infrastructure, the state file must be stored on a remote backend.
+## Create a bucket for Terraform state file
 
-Terraform enables the storage of the state file on a S3 compatible storage. The Scaleway BLOB storage is a service compatible with S3.
+This should be the only resource created manually. `Terraform` can store its state file either locally or at a remote location. Working with a local state file is ok for personnal use on a single computer but if you plan to work alone on multiple computers or if you plan to work with multiple people on the same infrastructure, the state file must be stored on a remote backend.
 
-> Caution: Scaleway BLOB storage does not offer state file locking and as such is not suitable for mutiple people to work on the same terraform deployment.
+`Terraform` enables the storage of the state file on a S3 compatible storage. The Scaleway BLOB storage is a service compatible with S3.
+
+> Caution: Scaleway BLOB storage does not offer state file locking and as such is not suitable for multiple people to work on the same terraform deployment at the same time!
 
 ## Initialize the remote backend
 
 To initialize the remote backend to Scaleway, follow the steps here under.
 
-Create a provider.tf file with the following content
+Create a `main.tf` file with the following content
 
 ```hcl
 provider "scaleway" {
@@ -24,7 +26,7 @@ terraform {
 }
 ```
 
-Next create a backend.tfvars file containing the properties of the remote backend. Use the instructions on [terraform scaleway provider's page](https://www.terraform.io/docs/providers/scaleway/index.html).
+Next create a `backend.tfvars` file containing the properties of the remote backend. Use the instructions on [terraform scaleway provider's page](https://www.terraform.io/docs/providers/scaleway/index.html).
 
 ```hcl
 # Configuration file for the state file backend
@@ -36,7 +38,7 @@ skip_region_validation      = true
 skip_credentials_validation = true
 # Both access_key and secret_key are filled in at init time with option -backend-config="access_key=xxxxxx" -backend-config="secret_key=xxxxx"
 # acces_key =
-# secret_key = 
+# secret_key =
 ```
 
 Then initialize the backend with the following command
@@ -51,7 +53,7 @@ Another option is to populate environment variables `SCW_ACCESS_KEY` and `SCW_SE
 
 ## Import the current BLOB bucket for Synology backup
 
-Create an empty resource in main.tf
+Create an empty resource in `scw-blob.tf`.
 
 ```hcl
 resource "scaleway_object_bucket" "tf-sebpon-nas-backup" {
