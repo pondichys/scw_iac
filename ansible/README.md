@@ -10,16 +10,20 @@ The software in the list hereunder are deployed with ansible playbooks / roles.
 
 - [powerline-go](https://github.com/justjanne/powerline-go): a super nice shell command line for bash.
 - [netdata](https://www.netdata.cloud/): monitoring tool.
+- [fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page): a tool to inspect logs and ban ip addresses that tries to hack your server.
 
 ### Development stuff for work
+
+- [code-server](https://github.com/cdr/code-server): VS Code available through HTTPS and running on a server. Ideal when we'll work from office where firewall rules block everything.
 
 ### My stuff for seblab.be
 
 > Idea: investigate the option to deploy the seblab stuff on a [Kapsule](https://www.scaleway.com/fr/kubernetes-kapsule/) worker node instead.
 
-- Docker : to rule them all.
+- Docker : to rule them all. We can also try `podman`.
 - Traefik v2.0: reverse proxy for all docker installed applications.
-- [Authelia](https://docs.authelia.com/): authentication and single sign-on for web apps.
+- [Authelia](https://docs.authelia.com/): two-factor authentication and single sign-on for web apps. not based on OAuth2 / OpenID Connect. Supports One Time Passwords and Yubikeys.
+- [Pomerium](https://www.pomerium.io/): another authentication and single-sign on for web apps. Based on OAuth2 / OpenID Connect.
 - [Hugo](https://gohugo.io/): a static site generator for my blog.
 - [Miniflux](https://miniflux.app/index.html): a RSS aggregator - to be investigated as it requires PostGresql database.
 
