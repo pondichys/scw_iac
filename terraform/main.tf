@@ -1,8 +1,22 @@
 # This file contains the terraform provider used for Scaleway
-provider "scaleway" {
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "seblab"
+
+    workspaces {
+      name = "scw_iac"
+    }
+  }
+
+  required_providers {
+    scaleway = {
+      source = "scaleway/scaleway"
+    }
+  }
+  required_version = ">= 0.13"
 }
 
-terraform {
-  backend "s3" {
-  }
+provider "scaleway" {
+  zone = "fr-par-1"
 }
