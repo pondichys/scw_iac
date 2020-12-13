@@ -7,7 +7,7 @@ variable "zone" {
 
 # Kapsule
 variable "kapsule_k8s_version" {
-  default = "1.19.1"
+  default = "1.20"
 }
 
 variable "kapsule_cni" {
@@ -21,5 +21,5 @@ variable "kapsule_pool_size" {
   default = 1
 }
 variable "kapsule_ingress" {
-  default = "nginx"
+  default = "traefik2"
 }
