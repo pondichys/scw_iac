@@ -21,5 +21,5 @@ variable "kapsule_pool_size" {
   default = 1
 }
 variable "kapsule_ingress" {
-  default = "traefik2"
+  default = "nginx"
 }
