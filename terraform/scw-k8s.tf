@@ -13,4 +13,5 @@ resource "scaleway_k8s_pool" "scw-k8s-seblab-workers" {
   name = "scw-k8s-seblab-workers"
   node_type = var.kapsule_node_type
   size = var.kapsule_pool_size
+  autohealing = true
 }

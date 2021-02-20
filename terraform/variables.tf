@@ -7,7 +7,7 @@ variable "zone" {
 
 # Kapsule
 variable "kapsule_k8s_version" {
-  default = "1.20.1"
+  default = "1.20.4"
 }
 
 variable "kapsule_cni" {
