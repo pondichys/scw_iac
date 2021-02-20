@@ -19,13 +19,13 @@ resource "scaleway_instance_security_group" "def-sg" {
 }
 
 # Then we create a public IP
-resource "scaleway_instance_ip" "server_ip" {}
+# resource "scaleway_instance_ip" "server_ip" {}
 
-# We create a VM and assign it to the security group
-resource "scaleway_instance_server" "seblab" {
-  type              = "DEV1-M"
-  image             = "ubuntu-bionic"
-  tags              = ["seblab"]
-  ip_id             = scaleway_instance_ip.server_ip.id
-  security_group_id = scaleway_instance_security_group.def-sg.id
-}
+# # We create a VM and assign it to the security group
+# resource "scaleway_instance_server" "seblab" {
+#   type              = "DEV1-M"
+#   image             = "ubuntu-bionic"
+#   tags              = ["seblab"]
+#   ip_id             = scaleway_instance_ip.server_ip.id
+#   security_group_id = scaleway_instance_security_group.def-sg.id
+# }
