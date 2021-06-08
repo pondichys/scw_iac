@@ -17,9 +17,11 @@ variable "kapsule_cni" {
 variable "kapsule_node_type" {
   default = "DEV1-M"
 }
+
 variable "kapsule_pool_size" {
   default = 1
 }
-variable "kapsule_ingress" {
-  default = "nginx"
-}
+
+# variable "kapsule_ingress" {
+#   default = "nginx"
+# }
