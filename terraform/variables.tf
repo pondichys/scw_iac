@@ -1,27 +1,47 @@
 variable "region" {
-  default = "fr-par"
+  description = "Scaleway region where resources are deployed."
+  type        = string
+  default     = "fr-par"
 }
 variable "zone" {
-  default = "fr-par-1"
+  description = "Scaleway zone where resources are deployed."
+  type        = string
+  default     = "fr-par-1"
 }
 
 # Kapsule
 variable "kapsule_k8s_version" {
-  default = "1.20.4"
+  description = "Version of Kubernetes for blue Kapsule cluster."
+  type        = string
+  default     = "1.20.4"
+}
+
+variable "kapsule_green_k8s_version" {
+  description = "Version of Kubernetes for green Kapsule cluster. Must not contain patch as we enable autoupgrade."
+  type        = string
+  default     = "1.23"
 }
 
 variable "kapsule_cni" {
-    default = "cilium"
+  description = "Kubernetes CNI for blue Kapsule cluser."
+  type        = string
+  default     = "cilium"
 }
 
 variable "kapsule_node_type" {
-  default = "DEV1-M"
+  description = "Type of VMs to use in node pools."
+  type        = string
+  default     = "DEV1-M"
 }
 
 variable "kapsule_pool_size" {
-  default = 1
+  description = "Number of nodes for the main node pool of the blue Kapsule cluster."
+  type        = number
+  default     = 1
 }
 
-# variable "kapsule_ingress" {
-#   default = "nginx"
-# }
+variable "kapsule_green_pool_size" {
+  description = "Number of nodes for the main node pool of the green Kapsule cluster."
+  type        = number
+  default     = 2
+}
