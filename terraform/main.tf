@@ -1,7 +1,7 @@
 # This file contains the terraform provider used for Scaleway
 terraform {
   backend "remote" {
-    hostname = "app.terraform.io"
+    hostname     = "app.terraform.io"
     organization = "seblab"
 
     workspaces {
@@ -11,8 +11,8 @@ terraform {
 
   required_providers {
     scaleway = {
-      source = "scaleway/scaleway"
-      version = ">=2.1.0"
+      source  = "scaleway/scaleway"
+      version = "~>2.2.2"
     }
   }
   required_version = ">= 1.0.0"
