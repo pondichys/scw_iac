@@ -4,13 +4,16 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_scaleway"></a> [scaleway](#requirement\_scaleway) | >=2.1.0 |
+| <a name="requirement_helm"></a> [helm](#requirement\_helm) | ~> 2.6.0 |
+| <a name="requirement_scaleway"></a> [scaleway](#requirement\_scaleway) | ~>2.2.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_scaleway"></a> [scaleway](#provider\_scaleway) | 2.1.0 |
+| <a name="provider_helm.green"></a> [helm.green](#provider\_helm.green) | 2.6.0 |
+| <a name="provider_null"></a> [null](#provider\_null) | 3.1.1 |
+| <a name="provider_scaleway"></a> [scaleway](#provider\_scaleway) | 2.2.2 |
 
 ## Modules
 
@@ -20,6 +23,8 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [helm_release.argocd_green](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
+| [null_resource.kubeconfig_green](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [scaleway_k8s_cluster.green](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/k8s_cluster) | resource |
 | [scaleway_k8s_cluster.scw-k8s-seblab](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/k8s_cluster) | resource |
 | [scaleway_k8s_pool.green](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/k8s_pool) | resource |
@@ -33,6 +38,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_argocd_green_version"></a> [argocd\_green\_version](#input\_argocd\_green\_version) | Version of ArgoCD Helm chart to deploy on green cluster. | `string` | `"4.9.12"` | no |
 | <a name="input_kapsule_cni"></a> [kapsule\_cni](#input\_kapsule\_cni) | Kubernetes CNI for blue Kapsule cluser. | `string` | `"cilium"` | no |
 | <a name="input_kapsule_green_k8s_version"></a> [kapsule\_green\_k8s\_version](#input\_kapsule\_green\_k8s\_version) | Version of Kubernetes for green Kapsule cluster. Must not contain patch as we enable autoupgrade. | `string` | `"1.23"` | no |
 | <a name="input_kapsule_green_pool_size"></a> [kapsule\_green\_pool\_size](#input\_kapsule\_green\_pool\_size) | Number of nodes for the main node pool of the green Kapsule cluster. | `number` | `2` | no |
