@@ -45,3 +45,9 @@ variable "kapsule_green_pool_size" {
   type        = number
   default     = 2
 }
+
+variable "argocd_green_version" {
+  description = "Version of ArgoCD Helm chart to deploy on green cluster."
+  type        = string
+  default     = "4.9.12"
+}
