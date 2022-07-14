@@ -25,6 +25,8 @@ No modules.
 |------|------|
 | [helm_release.argocd_green](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 | [null_resource.kubeconfig_green](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [scaleway_domain_zone.blue](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/domain_zone) | resource |
+| [scaleway_domain_zone.green](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/domain_zone) | resource |
 | [scaleway_k8s_cluster.green](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/k8s_cluster) | resource |
 | [scaleway_k8s_cluster.scw-k8s-seblab](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/k8s_cluster) | resource |
 | [scaleway_k8s_pool.green](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/k8s_pool) | resource |
