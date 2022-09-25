@@ -6,6 +6,7 @@ provider "registry.terraform.io/hashicorp/helm" {
   constraints = "~> 2.6.0"
   hashes = [
     "h1:BPCVkd80+iJiI6z2M1R1+0rI0h6Q2vNGdQG3uNsTtts=",
+    "h1:rGVucCeYAqklKupwoLVG5VPQTIkUhO7WGcw3WuHYrm8=",
     "zh:0ac248c28acc1a4fd11bd26a85e48ab78dd6abf0f7ac842bf1cd7edd05ac6cf8",
     "zh:3d32c8deae3740d8c5310136cc11c8afeffc350fbf88afaca0c34a223a5246f5",
     "zh:4055a27489733d19ca7fa2dfce14d323fe99ae9dede7d0fea21ee6db0b9ca74b",
@@ -25,6 +26,7 @@ provider "registry.terraform.io/hashicorp/null" {
   version = "3.1.1"
   hashes = [
     "h1:1J3nqAREzuaLE7x98LEELCCaMV6BRiawHSg9MmFvfQo=",
+    "h1:71sNUDvmiJcijsvfXpiLCz0lXIBSsEJjMxljt7hxMhw=",
     "zh:063466f41f1d9fd0dd93722840c1314f046d8760b1812fa67c34de0afcba5597",
     "zh:08c058e367de6debdad35fc24d97131c7cf75103baec8279aba3506a08b53faf",
     "zh:73ce6dff935150d6ddc6ac4a10071e02647d10175c173cfe5dca81f3d13d8afe",
@@ -42,8 +44,9 @@ provider "registry.terraform.io/hashicorp/null" {
 
 provider "registry.terraform.io/scaleway/scaleway" {
   version     = "2.2.2"
-  constraints = ">= 2.2.1"
+  constraints = "~> 2.2.2"
   hashes = [
+    "h1:A1PTRiH+a9mb4SnTZDLEp0rNtRk5cZ3Ofbezfqn0Ino=",
     "h1:Wu7FIu/ViSiv9bkCmBhnMYT4Gab0WYOdgY9Ql0N3tgU=",
     "zh:007b55cba84632c05ce59174cb4dce65bf6026dda149435e00a8d9efff5b5135",
     "zh:02d663c97865eb2cf0902ea7aac1ace6249268562d014cf7f63515622189f8de",
