@@ -1,5 +1,7 @@
 # Scaleway Infrastructure as Code for seblab.be
 
+# This repository is obsolete and archived
+
 This repository contains the code to deploy my infrastructure hosted on Scaleway cloud. It consists of Terraform and Ansible code.
 
 ## Prerequisites
